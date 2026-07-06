@@ -5,6 +5,7 @@ import link24Regular from '@fluentui/svg-icons/icons/link_24_regular.svg?raw'
 import person24Regular from '@fluentui/svg-icons/icons/person_24_regular.svg?raw'
 import bilibili from '../assets/bilibili.svg?raw'
 import github from '../assets/github.svg?raw'
+import classisland from '../assets/ClassIsland.svg?raw'
 
 export const fluentIcons = {
   add24Regular,
@@ -13,7 +14,8 @@ export const fluentIcons = {
   link24Regular,
   person24Regular,
   bilibili,
-  github
+  github,
+  classisland
 } as const
 
 export type FluentIconName = keyof typeof fluentIcons

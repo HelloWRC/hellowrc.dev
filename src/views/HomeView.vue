@@ -91,7 +91,7 @@ export default defineComponent({
       <span class="text-sm opacity-75">参与的项目</span>
       <ActionCard header="ClassIsland"
                   description="一款适用于班级大屏的课表小工具，可以一目了然地显示各种信息。我是此项目的主要开发者。"
-                  icon="/src/assets/ClassIsland.svg" to="https://www.classisland.tech/"/>
+                  icon="classisland" to="https://www.classisland.tech/"/>
       <span class="text-sm opacity-75">相关链接</span>
       <ActionCard header="GitHub"
                   icon="github" to="https://github.com/HelloWRC"/>
