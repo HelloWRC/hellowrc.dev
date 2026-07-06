@@ -1,0 +1,108 @@
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+:root {
+  --bg-color: #eeeeee;
+  --text-color: #040404;
+  --accent-color: #00afa5;
+  --accent-color1: #00afa5aa;
+  --accent-color2: #00afa555;
+  --accent-color3: #00afa533;
+}
+
+@include dark-mode {
+  :root {
+    --bg-color: #040404;
+    --text-color: #eeeeee;
+    --accent-color: #00fff2;
+    --accent-color1: #00fff2aa;
+    --accent-color2: #00fff255;
+    --accent-color3: #00fff233;
+  }
+}
+
+:root{
+  //@media (min-width: 600px) {
+  //  &::before {
+  //    content: "";
+  //    position: absolute;
+  //    inset: 0;
+  //
+  //    background-image: url("assets/bg.webp");
+  //    background-size: cover;
+  //    background-position: center;
+  //    background-repeat: no-repeat;
+  //
+  //    opacity: 0.1; // 背景图透明度
+  //    z-index: 0;
+  //    pointer-events: none;
+  //  }
+  //}
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei UI",
+    "Microsoft YaHei",
+    "Noto Sans CJK SC",
+    "Source Han Sans SC",
+    "WenQuanYi Micro Hei",
+    sans-serif;
+  --firefly-gradient: linear-gradient(135deg, #26c4ce, #b3f3c6);
+  --cyrene-gradient: linear-gradient(60deg, #A2FFE1 0%, #8BA0FB 20.08%, #EBA2FD 78.51%);
+}
+
+* {
+  color: var(--text-color);
+}
+
+.page-margin-x-min, .margin-x-min {
+  margin: 0 12px;
+
+  max-width: 400px;
+  @media (min-width: 424px) {
+    width: 400px;
+    justify-self: center;
+    margin: 0 auto;
+  }
+}
+
+.page-margin-x, .margin-x {
+  margin: 0 42px;
+  @media (max-width: 600px) {
+    margin: 0 12px
+  }
+
+  max-width: 1200px;
+  @media (min-width: 1284px) {
+    width: 1200px;
+    justify-self: center;
+    margin: 0 auto;
+  }
+}
+
+.page-margin-x-wide, .margin-x-wide {
+  margin: 0 42px;
+  @media (max-width: 600px) {
+    margin: 0 12px
+  }
+
+  max-width: 1400px;
+  @media (min-width: 1484px) {
+    width: 1400px;
+    justify-self: center;
+    margin: 0 auto;
+  }
+}
+
+.gradient-base {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
