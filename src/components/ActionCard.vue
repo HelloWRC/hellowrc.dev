@@ -118,5 +118,15 @@ const linkAttrs = computed(() =>
       transform: translateX(2px);
     }
   }
+
+  &:active {
+    & .action-card-container {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 2px var(--accent-color3),
+      0 0 8px var(--accent-color2);
+      transform: scale(0.995);
+    }
+
+  }
 }
 </style>
