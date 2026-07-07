@@ -1,5 +1,6 @@
 ﻿<script setup lang="ts">
 import { computed } from "vue";
+import { RouterLink } from "vue-router";
 import FluentIcon from "./FluentIcon.vue";
 import { fluentIcons, type FluentIconName } from "../icons/fluent.ts";
 
@@ -27,10 +28,25 @@ const fluentIconName = computed(() =>
 const imageIconUrl = computed(() =>
     isFluentIcon.value ? undefined : props.icon
 )
+
+const isRelativeLink = computed(() => {
+  const to = props.to.trim();
+  return !/^[a-z][a-z\d+\-.]*:/i.test(to) && !to.startsWith("//");
+})
+
+const linkComponent = computed(() =>
+    isRelativeLink.value ? RouterLink : "a"
+)
+
+const linkAttrs = computed(() =>
+    isRelativeLink.value
+        ? { to: props.to }
+        : { href: props.to, target: "_blank", rel: "noopener noreferrer" }
+)
 </script>
 
 <template>
-  <a :href="props.to" class="card-root" target="_blank">
+  <component :is="linkComponent" v-bind="linkAttrs" class="card-root">
     <div class="action-card-container">
       <FluentIcon v-if="fluentIconName"
                   :name="fluentIconName"
@@ -48,7 +64,7 @@ const imageIconUrl = computed(() =>
                   class="row-span-2 justify-center self-center chevron"/>
       <span class="text-sm text-wrap opacity-75">{{ props.description }}</span>
     </div>
-  </a>
+  </component>
 </template>
 
 <style scoped lang="scss">

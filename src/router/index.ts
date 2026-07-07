@@ -7,6 +7,11 @@ const routes: RouteRecordRaw[] = [
     name: 'home',
     component: () => import('../views/HomeView.vue'),
   },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'notfound',
+    component: () => import('../views/NotFound.vue')
+  }
 ]
 
 const router = createRouter({
