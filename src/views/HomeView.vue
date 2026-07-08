@@ -15,10 +15,10 @@ import ActionCardContainer from "../components/ActionCardContainer.vue";
     <ActionCard header="博客" icon="book24Regular" to="https://blogs.hellowrc.dev/"/>
     <span class="text-sm opacity-75">我的亮点项目</span>
     <ActionCard header="ClassIsland"
-                description="一款适用于班级大屏的课表小工具，可以一目了然地显示各种信息。我是此项目的主要开发者。"
+                description="一款适用于班级大屏的课表小工具，可以一目了然地显示各种信息。"
                 icon="classisland" to="https://www.classisland.tech/"/>
     <ActionCard header="ClassIsland 集控服务器"
-                description="批量管理多个 ClassIsland 实例，远程下发课表、提醒等信息。我是此项目的主要开发者。"
+                description="批量管理多个 ClassIsland 实例，远程下发课表、提醒等信息。"
                 icon="classisland" to="https://github.com/ClassIsland/ManagementServer"/>
     <ActionCard header="更多项目…" icon="folderOpen24Regular" to="/projects"/>
     <span class="text-sm opacity-75">相关链接</span>

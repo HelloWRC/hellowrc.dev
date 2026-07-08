@@ -1,15 +1,15 @@
 ﻿<script setup lang="ts">
 
-import ActionCard from "../components/ActionCard.vue";
 import ActionCardContainer from "../components/ActionCardContainer.vue";
+import ActionCard from "../components/ActionCard.vue";
 </script>
 
 <template>
   <action-card-container>
     <div class="mb-1">
-      <p class="text-sm" style="color: var(--accent-color)">HelloWRC.Dev</p>
-      <p class="text-xl">404</p>
-      <p>找不到您请求的页面。</p>
+      <p>愿我们在那鲜花芬芳的西风尽头重逢。</p>
+      <br/>
+      <p>「人生就是如此，道别是一件难事，既然忘不掉，那就装着吧。」</p>
     </div>
     <ActionCard icon="arrowRight24Regular" header="返回首页" to="/"/>
   </action-card-container>
