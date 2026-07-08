@@ -6,6 +6,14 @@ import { fluentIcons, type FluentIconName } from "../icons/fluent.ts";
 
 type ActionCardIcon = FluentIconName | (string & {});
 
+const bundledAssetUrls = import.meta.glob("../assets/**/*", {
+  eager: true,
+  import: "default",
+  query: "?url",
+}) as Record<string, string>;
+
+const sourceAssetPathPattern = /^(?:\/?src\/assets\/|\.\.\/assets\/)(.+)$/;
+
 const props = withDefaults(defineProps<{
   icon: ActionCardIcon,
   header: string | undefined,
@@ -25,8 +33,18 @@ const fluentIconName = computed(() =>
     isFluentIcon.value ? props.icon as FluentIconName : undefined
 )
 
+const resolveImageIconUrl = (icon: string) => {
+  const assetPath = icon.trim().match(sourceAssetPathPattern)?.[1];
+
+  if (!assetPath) {
+    return icon;
+  }
+
+  return bundledAssetUrls[`../assets/${assetPath}`] ?? icon;
+}
+
 const imageIconUrl = computed(() =>
-    isFluentIcon.value ? undefined : props.icon
+    isFluentIcon.value ? undefined : resolveImageIconUrl(props.icon)
 )
 
 const isRelativeLink = computed(() => {

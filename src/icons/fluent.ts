@@ -4,6 +4,8 @@ import chevronRight20Regular from '@fluentui/svg-icons/icons/chevron_right_20_re
 import link24Regular from '@fluentui/svg-icons/icons/link_24_regular.svg?raw'
 import person24Regular from '@fluentui/svg-icons/icons/person_24_regular.svg?raw'
 import arrowRight24Regular from '@fluentui/svg-icons/icons/arrow_right_24_regular.svg?raw'
+import arrowLeft24Regular from '@fluentui/svg-icons/icons/arrow_left_24_regular.svg?raw'
+import folderOpen24Regular from '@fluentui/svg-icons/icons/folder_open_24_regular.svg?raw'
 import bilibili from '../assets/bilibili.svg?raw'
 import github from '../assets/github.svg?raw'
 import classisland from '../assets/ClassIsland.svg?raw'
@@ -15,6 +17,8 @@ export const fluentIcons = {
   link24Regular,
   person24Regular,
   arrowRight24Regular,
+  arrowLeft24Regular,
+  folderOpen24Regular,
   bilibili,
   github,
   classisland
